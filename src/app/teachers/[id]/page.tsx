@@ -16,7 +16,7 @@ interface Teacher {
 }
 
 export default function TeacherDetailsPage() {
-  const { isLoggedIn, role, toggleSidebar } = useAuth() as any;
+  const { isLoggedIn, role, toggleSidebar } = useAuth();
   const { id } = useParams() as { id: string };
   const router = useRouter();
   const [teacher, setTeacher] = useState<Teacher | null>(null);
@@ -52,8 +52,14 @@ export default function TeacherDetailsPage() {
             setTeacher(null);
             setFormData({ id: 'new', name: '', subject: '', classes: 0 });
           }
-        } catch (err) {
-          setError('Failed to load teacher details.');
+        } catch (err: unknown) {
+          if (err instanceof Error) {
+            console.log(err.message, "error");
+            setError('Failed to load teacher details.');
+          } else {
+            console.log('An unknown error occurred', "error");
+            setError('An unexpected error occurred.');
+          }
         } finally {
           setLoading(false);
         }

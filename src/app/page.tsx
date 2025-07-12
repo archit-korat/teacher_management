@@ -33,7 +33,7 @@ interface DashboardData {
 }
 
 export default function Home() {
-  const { isLoggedIn, role, toggleSidebar } = useAuth() as any; 
+  const { isLoggedIn, role, toggleSidebar } = useAuth(); 
   const [dashboardData, setDashboardData] = useState<DashboardData>({
     totalTeachers: 0,
     activeClasses: 0,

@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
-import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 import Head from 'next/head';
 import { FaChalkboardTeacher } from 'react-icons/fa';
@@ -11,13 +10,11 @@ export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const { login } = useAuth();
-  const router = useRouter();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate login with static user data
     if (username && password) {
-      login('static-token', 'Teacher'); // Calls login with parameters
+      login('static-token', 'Teacher');
       toast.success('Signed in successfully');
     } else {
       toast.error('Please enter username and password');
@@ -82,7 +79,7 @@ export default function Login() {
             </button>
           </form>
           <p className="text-center text-gray-500 text-sm mt-6">
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <span className="text-primary font-medium cursor-pointer hover:underline">
               Contact Admin
             </span>
