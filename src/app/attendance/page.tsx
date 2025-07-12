@@ -95,7 +95,7 @@ const AttendanceManager: React.FC = () => {
     <div className="w-full h-[100vh] relative overflow-x-hidden">
       <div
         className="h-[350px] sm:h-[300px] flex flex-col bg-primary items-start p-10 gap-5"
-        style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#5668CB' }}
+        style={{ backgroundSize: 'cover', backgroundPosition: 'center'}}
       >
         <div className="w-full flex justify-between items-center">
           <h1 className="text-white font-medium text-xl sm:text-2xl lg:text-3xl">Teacher Attendance Manager</h1>
