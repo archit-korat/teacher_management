@@ -16,7 +16,6 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  // Initialize auth state synchronously from localStorage
   let initialLoggedIn = false;
   let initialRole = '';
   try {

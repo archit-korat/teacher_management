@@ -868,6 +868,10 @@ video {
   display: flex;
 }
 
+.flex-column{
+  flex-direction: column;
+}
+
 .inline-flex {
   display: inline-flex;
 }

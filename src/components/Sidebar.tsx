@@ -3,15 +3,13 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
-import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 import { 
   FaHome, 
   FaChalkboardTeacher, 
   FaBook, 
-  FaUserGraduate, 
+  FaCreditCard, 
   FaClipboardList,
-  FaCog, 
   FaSignOutAlt 
 } from 'react-icons/fa';
 
@@ -31,23 +29,19 @@ const Sidebar = () => {
       confirmButtonText: "Yes, log out!",
     }).then((result) => {
       if (result.isConfirmed) {
-        toast.success("Logged Out Successfully");
         logout();
       }
     });
   };
 
-  // Navigation links data
   const navLinks = [
     { href: "/", label: "Dashboard", icon: <FaHome size={20} /> },
     { href: "/teachers", label: "Teachers", icon: <FaChalkboardTeacher size={20} /> },
     { href: "/classes", label: "Classes", icon: <FaBook size={20} /> },
-    { href: "/students", label: "Students", icon: <FaUserGraduate size={20} /> },
     { href: "/attendance", label: "Attendance", icon: <FaClipboardList size={20} /> },
-    { href: "/settings", label: "Settings", icon: <FaCog size={20} /> },
+    { href: "/payment", label: "Payment", icon: <FaCreditCard size={20} /> },
   ];
 
-  // Check if a link is active
   const isActive = (href: string) => {
     return pathname === href || 
            (href !== '/' && pathname.startsWith(href));
