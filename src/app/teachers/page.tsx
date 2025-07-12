@@ -147,7 +147,6 @@ export default function TeachersPage() {
         style={{
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundColor: '#5668CB',
         }}
       >
         <div className="w-full flex justify-between items-center">
